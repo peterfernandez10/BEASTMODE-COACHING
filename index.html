@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beastmode Coaching | Elite Soccer Training — Rochester, NY</title>
+<meta name="description" content="Beastmode Coaching, LLC — elite 1-on-1, small group, showcase and pro-prep soccer training with Coach Isaac Kissi at Gates High School Park, Rochester, NY.">
+<link rel="icon" type="image/png" href="beastmode-logo.png">
+<link rel="apple-touch-icon" href="beastmode-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0a0a0b;
+  --void-2:#101113;
+  --panel:#1a1b1e;
+  --panel-2:#212226;
+  --line:#38393f;
+  --bone:#f8f5ee;
+  --bone-dim:#c4c1ba;
+  --bone-dimmer:#8f8c86;
+  --gold:#c9992f;
+  --gold-light:#e8c468;
+  --gold-dim:#8a6b28;
+  --crimson:#8c1a1e;
+  --crimson-light:#c73b34;
+  --f-display:'Anton',sans-serif;
+  --f-serif:'Playfair Display',serif;
+  --f-label:'Oswald',sans-serif;
+  --f-body:'Work Sans',sans-serif;
+  --slash:-6deg;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--void);
+  color:var(--bone);
+  font-family:var(--f-body);
+  font-weight:400;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+::selection{background:var(--gold);color:var(--void);}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+.wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
+.eyebrow{
+  font-family:var(--f-label);
+  font-weight:600;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  font-size:12px;
+  color:var(--gold);
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:18px;
+}
+.eyebrow::before{content:'';width:34px;height:2px;background:linear-gradient(90deg,var(--gold),var(--crimson));display:inline-block;}
+.h2{
+  font-family:var(--f-display);
+  font-weight:400;
+  font-size:clamp(34px,5.2vw,64px);
+  text-transform:uppercase;
+  line-height:.98;
+  letter-spacing:.5px;
+}
+.h2 em{
+  font-style:normal;
+  font-family:var(--f-serif);
+  font-weight:900;
+  font-style:italic;
+  color:var(--gold-light);
+  text-transform:none;
+  letter-spacing:0;
+}
+.lede{font-size:17px;color:var(--bone-dim);max-width:560px;margin-top:18px;font-weight:300;}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* claw divider signature element */
+.claw-divider{position:relative;height:56px;margin:0 auto;width:100%;overflow:hidden;}
+.claw-divider svg{width:100%;height:100%;display:block;}
+
+/* ============ HEADER ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:18px 0;
+  transition:background .4s ease,padding .4s ease,border-color .4s ease;
+  border-bottom:1px solid transparent;
+}
+header.scrolled{
+  background:rgba(10,10,11,.86);
+  backdrop-filter:blur(14px);
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+}
+header .inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand img{height:56px;width:56px;object-fit:contain;transition:height .4s ease;filter:drop-shadow(0 0 10px rgba(201,153,47,.25));}
+header.scrolled .brand img{height:42px;width:42px;}
+.brand-text{font-family:var(--f-display);letter-spacing:.5px;line-height:.9;}
+.brand-text .b1{font-size:19px;color:var(--bone);display:block;}
+.brand-text .b2{font-size:11px;color:var(--gold);letter-spacing:.3em;font-family:var(--f-label);font-weight:600;display:block;margin-top:3px;}
+nav.main-nav{display:flex;align-items:center;gap:34px;}
+nav.main-nav a{
+  font-family:var(--f-label);font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bone-dim);position:relative;padding:6px 0;transition:color .25s ease;
+}
+nav.main-nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .3s ease;}
+nav.main-nav a:hover{color:var(--bone);}
+nav.main-nav a:hover::after{width:100%;}
+.btn{
+  font-family:var(--f-label);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:13px;
+  padding:14px 28px;position:relative;display:inline-flex;align-items:center;gap:10px;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1);
+}
+.btn-gold{background:linear-gradient(100deg,var(--gold-light),var(--gold));color:#1a1200;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);}
+.btn-gold:hover{transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid var(--bone-dimmer);color:var(--bone);clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-light);transform:translateY(-2px);}
+.burger{display:none;width:26px;height:20px;position:relative;}
+.burger span{position:absolute;left:0;right:0;height:2px;background:var(--bone);transition:.3s;}
+.burger span:nth-child(1){top:0;} .burger span:nth-child(2){top:9px;} .burger span:nth-child(3){top:18px;}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:flex-end;
+  padding:160px 0 90px;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(8,8,9,.55) 0%,rgba(8,8,9,.35) 30%,rgba(8,8,9,.85) 78%,var(--void) 100%),
+    linear-gradient(100deg,rgba(8,8,9,.92) 0%,rgba(8,8,9,.35) 46%,rgba(8,8,9,.1) 62%);
+}
+.hero-logo-ghost{
+  position:absolute;right:-6%;top:6%;width:56%;max-width:720px;opacity:.14;
+  filter:grayscale(1) contrast(1.3) brightness(1.6);mix-blend-mode:luminosity;pointer-events:none;z-index:1;
+}
+.hero-content{position:relative;z-index:2;width:100%;}
+.hero-eyebrow{
+  font-family:var(--f-label);font-weight:600;letter-spacing:.4em;text-transform:uppercase;font-size:13px;
+  color:var(--gold-light);margin-bottom:22px;display:flex;align-items:center;gap:16px;
+}
+.hero-eyebrow::before{content:'';width:46px;height:2px;background:linear-gradient(90deg,var(--gold),var(--crimson));}
+.hero h1{
+  font-family:var(--f-display);text-transform:uppercase;font-weight:400;
+  font-size:clamp(46px,9vw,118px);line-height:.92;letter-spacing:.5px;
+  max-width:14ch;
+}
+.hero h1 .line2{color:var(--gold-light);display:block;}
+.hero-sub{
+  margin-top:26px;font-size:clamp(16px,1.7vw,20px);color:var(--bone-dim);max-width:520px;font-weight:300;
+  border-left:2px solid var(--gold);padding-left:18px;
+}
+.hero-ctas{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap;}
+.scroll-cue{
+  position:absolute;bottom:26px;left:32px;z-index:2;display:flex;align-items:center;gap:10px;
+  font-family:var(--f-label);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dimmer);
+}
+.scroll-cue .stick{width:1px;height:36px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden;}
+.scroll-cue .stick::after{content:'';position:absolute;top:-40px;left:0;width:100%;height:40px;background:var(--gold-light);animation:cue 1.8s infinite;}
+@keyframes cue{0%{top:-40px;}100%{top:100%;}}
+
+/* ============ TICKER ============ */
+.ticker-band{
+  position:relative;background:linear-gradient(100deg,var(--gold-dim),var(--gold) 45%,var(--crimson) 100%);
+  transform:skewY(-1.4deg);margin:-38px 0 -38px;z-index:5;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.ticker-inner{transform:skewY(1.4deg);padding:15px 0;}
+.ticker-track{display:flex;white-space:nowrap;animation:tick 32s linear infinite;width:max-content;}
+.ticker-track span{
+  font-family:var(--f-label);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px;
+  color:#1a1200;padding:0 26px;display:flex;align-items:center;gap:26px;
+}
+.ticker-track span::after{content:'●';font-size:8px;color:#1a1200;opacity:.55;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ============ SECTION GENERIC ============ */
+section{position:relative;padding:130px 0;border-top:1px solid var(--line);}
+.section-tight{padding:90px 0;}
+.bg-void{background:var(--void);}
+.bg-panel{background:var(--panel);}
+
+/* section background photography */
+.section-photo{position:absolute;inset:0;z-index:0;}
+.section-photo img{width:100%;height:100%;object-fit:cover;}
+.section-photo.dim::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.88) 0%,rgba(10,10,11,.94) 100%);}
+.section-photo.side::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,10,11,.96) 0%,rgba(10,10,11,.75) 45%,rgba(10,10,11,.5) 100%);}
+.section-photo.edge::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.4) 0%,rgba(10,10,11,.93) 65%,var(--void) 100%);}
+section > .wrap{position:relative;z-index:1;}
+section > .section-photo + .wrap, .stats-band > .wrap{position:relative;z-index:2;}
+
+/* ============ PROGRAMS ============ */
+.programs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:70px;}
+.programs-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);
+}
+.pcard{
+  background:var(--panel);position:relative;overflow:hidden;min-height:400px;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:28px 26px;
+  transition:min-height .4s ease;
+}
+.pcard.tall{grid-row:span 1;min-height:480px;}
+.pcard .pimg{position:absolute;inset:0;z-index:0;}
+.pcard .pimg img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .5s ease;filter:saturate(1.05) brightness(.8);}
+.pcard:hover .pimg img{transform:scale(1.08);filter:saturate(1.2) brightness(.62);}
+.pcard::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(10,10,11,.08) 0%,rgba(10,10,11,.35) 42%,rgba(10,10,11,.96) 90%);
+}
+.pcard .pnum{
+  position:relative;z-index:2;font-family:var(--f-label);font-size:11px;letter-spacing:.25em;color:var(--gold-light);
+  margin-bottom:auto;font-weight:600;
+}
+.pcard h3{
+  position:relative;z-index:2;font-family:var(--f-display);text-transform:uppercase;font-weight:400;
+  font-size:23px;line-height:1.05;margin-top:16px;letter-spacing:.3px;
+}
+.pcard p{position:relative;z-index:2;font-size:14px;color:var(--bone-dim);margin-top:10px;line-height:1.55;}
+.pcard .tag{
+  position:relative;z-index:2;display:inline-block;margin-top:14px;font-family:var(--f-label);font-size:11px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light);border-bottom:1px solid var(--gold-dim);padding-bottom:3px;
+}
+@media(max-width:1100px){.programs-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:620px){.programs-grid{grid-template-columns:1fr;}}
+
+/* ============ COACH STORY ============ */
+.coach{position:relative;background:var(--void-2);overflow:hidden;}
+.coach-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;align-items:stretch;}
+.coach-img{position:relative;min-height:640px;clip-path:polygon(0 0,100% 0,88% 100%,0% 100%);}
+.coach-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:contrast(1.08) saturate(.9);}
+.coach-img::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,11,.9),transparent 55%);}
+.coach-badge{
+  position:absolute;left:30px;bottom:30px;z-index:3;font-family:var(--f-serif);font-style:italic;font-weight:700;
+  color:var(--gold-light);font-size:20px;line-height:1.3;max-width:70%;
+}
+.coach-copy{padding:90px 60px 90px 80px;display:flex;flex-direction:column;justify-content:center;}
+.coach-copy .quote{
+  font-family:var(--f-serif);font-style:italic;font-weight:700;font-size:clamp(22px,2.4vw,30px);
+  color:var(--bone);line-height:1.35;margin:26px 0 30px;
+  border-left:3px solid var(--crimson);padding-left:24px;
+}
+.coach-copy p{color:var(--bone-dim);font-size:16px;margin-bottom:16px;max-width:56ch;font-weight:300;}
+.coach-name{margin-top:26px;display:flex;align-items:center;gap:16px;}
+.coach-name .line{width:44px;height:2px;background:var(--gold);}
+.coach-name h4{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.08em;font-size:16px;}
+.coach-name span{display:block;font-size:12px;color:var(--gold-light);letter-spacing:.2em;text-transform:uppercase;margin-top:3px;font-family:var(--f-label);}
+@media(max-width:940px){.coach-grid{grid-template-columns:1fr;}.coach-img{clip-path:none;min-height:380px;}.coach-copy{padding:60px 28px;}}
+
+/* ============ GALLERY ============ */
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:130px;gap:8px;
+}
+.gitem{position:relative;overflow:hidden;border-radius:2px;}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .5s ease;filter:saturate(1.05) brightness(.94);}
+.gitem:hover img{transform:scale(1.1);filter:saturate(1.15) brightness(1.02);}
+.gitem::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);}
+.g1{grid-column:span 3;grid-row:span 3;}
+.g2{grid-column:span 3;grid-row:span 2;}
+.g3{grid-column:span 2;grid-row:span 2;}
+.g4{grid-column:span 2;grid-row:span 2;}
+.g5{grid-column:span 2;grid-row:span 2;}
+.g6{grid-column:span 3;grid-row:span 2;}
+.g7{grid-column:span 3;grid-row:span 2;}
+@media(max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px;}
+  .g1,.g2,.g3,.g4,.g5,.g6,.g7{grid-column:span 1;grid-row:span 2;}
+}
+
+/* ============ PROCESS ============ */
+.process-wrap{position:relative;}
+.process-track{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:60px;}
+.process-track::before{
+  content:'';position:absolute;top:34px;left:8%;right:8%;height:2px;
+  background:repeating-linear-gradient(90deg,var(--gold) 0 14px,transparent 14px 24px);opacity:.5;
+  z-index:0;
+}
+.pstep{position:relative;z-index:1;}
+.pstep .pn{
+  width:68px;height:68px;border-radius:50%;background:var(--panel-2);border:1px solid var(--gold-dim);
+  display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:26px;color:var(--gold-light);
+  margin-bottom:26px;
+}
+.pstep h3{font-family:var(--f-label);text-transform:uppercase;letter-spacing:.05em;font-size:21px;margin-bottom:12px;}
+.pstep p{color:var(--bone-dim);font-size:15px;font-weight:300;max-width:36ch;}
+@media(max-width:800px){.process-track{grid-template-columns:1fr;gap:44px;}.process-track::before{display:none;}}
+
+/* ============ STATS ============ */
+.stats-band{
+  position:relative;background:var(--void-2);border-bottom:1px solid var(--line);
+  padding:80px 0;overflow:hidden;
+}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center;}
+.stat .num{
+  font-family:var(--f-display);font-size:clamp(40px,5vw,64px);
+  background:linear-gradient(100deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1;
+}
+.stat .lbl{margin-top:12px;font-family:var(--f-label);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-dim);}
+@media(max-width:760px){.stats-grid{grid-template-columns:1fr 1fr;row-gap:44px;}}
+
+/* ============ TESTIMONIALS ============ */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);margin-top:60px;}
+.tcard{background:rgba(21,21,24,.86);backdrop-filter:blur(6px);padding:38px 32px;position:relative;}
+.tcard .mark{font-family:var(--f-serif);font-size:56px;color:var(--gold-dim);line-height:.6;display:block;margin-bottom:6px;}
+.tcard p{font-size:15.5px;color:var(--bone-dim);font-weight:300;line-height:1.7;margin-bottom:22px;min-height:126px;}
+.tcard .who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px;}
+.tcard .avatar{
+  width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--crimson));
+  display:flex;align-items:center;justify-content:center;font-family:var(--f-label);font-weight:700;font-size:14px;color:#0a0a0b;
+}
+.tcard .who h5{font-family:var(--f-label);font-size:13.5px;letter-spacing:.04em;}
+.tcard .who span{font-size:12px;color:var(--gold-light);}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+/* ============ FAQ ============ */
+.faq-wrap{max-width:820px;margin:60px auto 0;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{
+  width:100%;text-align:left;padding:26px 4px;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  font-family:var(--f-label);font-size:17px;letter-spacing:.02em;color:var(--bone);
+}
+.faq-q .plus{font-family:var(--f-display);font-size:22px;color:var(--gold);transition:transform .3s ease;flex-shrink:0;}
+.faq-item.open .plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{padding:0 4px 26px;color:var(--bone-dim);font-size:15px;font-weight:300;max-width:66ch;}
+
+/* ============ BOOKING ============ */
+.book-wrap{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:0;background:var(--panel);
+  clip-path:polygon(0 22px,22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%);
+}
+.book-form{padding:70px 60px;background:var(--panel);position:relative;z-index:1;}
+.book-info{
+  padding:70px 50px;position:relative;overflow:hidden;
+  border-left:1px solid var(--line);
+}
+.book-info .section-photo img{filter:saturate(1.05) brightness(.55);}
+.book-info .section-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,10,11,.75),rgba(10,10,11,.94));}
+.book-info .info-row{position:relative;z-index:1;}
+.field{margin-bottom:22px;}
+.field label{display:block;font-family:var(--f-label);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:8px;}
+.field input,.field select,.field textarea{
+  width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--bone);
+  padding:12px 4px;font-family:var(--f-body);font-size:15px;transition:border-color .25s ease;
+}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);}
+.field select option{background:var(--panel);}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.info-row{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);}
+.info-row:last-child{border-bottom:none;}
+.info-row .ic{width:20px;color:var(--gold);flex-shrink:0;padding-top:2px;}
+.info-row h5{font-family:var(--f-label);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-light);margin-bottom:4px;}
+.info-row p, .info-row a{font-size:15px;color:var(--bone-dim);display:block;}
+.info-row a:hover{color:var(--gold-light);}
+@media(max-width:900px){.book-wrap{grid-template-columns:1fr;}.book-form,.book-info{padding:50px 30px;}.field-row{grid-template-columns:1fr;}}
+
+/* ============ FINAL CTA ============ */
+.final-cta{
+  position:relative;padding:150px 0;text-align:center;overflow:hidden;background:var(--void);
+}
+.final-cta .bgline{
+  position:absolute;inset:0;background:
+    repeating-linear-gradient(var(--slash),transparent 0 62px,rgba(201,153,47,.05) 62px 64px);
+}
+.final-cta h2{
+  font-family:var(--f-display);text-transform:uppercase;font-size:clamp(38px,7vw,92px);line-height:.98;
+  position:relative;z-index:1;
+}
+.final-cta h2 span{color:var(--gold-light);}
+.final-cta p{position:relative;z-index:1;color:var(--bone-dim);margin:26px auto 40px;max-width:520px;font-weight:300;}
+
+/* ============ FOOTER ============ */
+footer{background:var(--void-2);border-top:1px solid var(--line);padding:80px 0 30px;}
+.foot-top{display:flex;justify-content:space-between;gap:60px;flex-wrap:wrap;padding-bottom:60px;border-bottom:1px solid var(--line);}
+.foot-brand{max-width:360px;}
+.foot-brand .brand{margin-bottom:18px;}
+.foot-brand p{color:var(--bone-dim);font-size:14.5px;font-weight:300;}
+.foot-cols{display:flex;gap:70px;flex-wrap:wrap;}
+.foot-col h5{font-family:var(--f-label);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-light);margin-bottom:18px;}
+.foot-col a,.foot-col p{display:block;color:var(--bone-dim);font-size:14.5px;margin-bottom:12px;transition:color .2s ease;}
+.foot-col a:hover{color:var(--gold-light);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;flex-wrap:wrap;gap:14px;}
+.foot-bottom p{font-size:12.5px;color:var(--bone-dimmer);}
+
+/* magnetic */
+.magnetic{will-change:transform;}
+
+@media(max-width:900px){
+  nav.main-nav{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:340px;background:var(--void-2);
+    flex-direction:column;justify-content:center;align-items:flex-start;padding:0 44px;gap:26px;
+    transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);border-left:1px solid var(--line);z-index:150;}
+  nav.main-nav.open{transform:translateX(0);}
+  nav.main-nav a{font-size:16px;}
+  .burger{display:block;z-index:210;}
+  .hero-ctas .btn{flex:1;justify-content:center;}
+}
+/* ============ PRELOADER ============ */
+#preloader{
+  position:fixed;inset:0;z-index:999;background:var(--void);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;
+  transition:opacity .7s ease,visibility .7s ease;
+}
+#preloader.done{opacity:0;visibility:hidden;pointer-events:none;}
+.preload-logo{
+  width:96px;height:96px;object-fit:contain;
+  animation:preloadIn 1.1s cubic-bezier(.2,.8,.2,1) both;
+  filter:drop-shadow(0 0 24px rgba(201,153,47,.4));
+}
+@keyframes preloadIn{
+  0%{opacity:0;transform:scale(.5) rotate(-8deg);}
+  55%{opacity:1;transform:scale(1.08) rotate(2deg);}
+  100%{opacity:1;transform:scale(1) rotate(0);}
+}
+.preload-bar{width:160px;height:2px;background:var(--line);overflow:hidden;position:relative;}
+.preload-bar span{position:absolute;left:-40%;top:0;bottom:0;width:40%;background:linear-gradient(90deg,transparent,var(--gold-light),var(--gold),transparent);animation:preloadBar 1.3s ease-in-out infinite;}
+@keyframes preloadBar{0%{left:-40%;}100%{left:100%;}}
+.preload-label{font-family:var(--f-label);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--bone-dimmer);}
+
+/* ============ STAGGERED REVEALS ============ */
+.programs-grid .pcard,.gallery-grid .gitem,.stats-grid .stat,.testi-grid .tcard{
+  opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.programs-grid.in .pcard,.gallery-grid.in .gitem,.stats-grid.in .stat,.testi-grid.in .tcard{opacity:1;transform:translateY(0);}
+.programs-grid.in .pcard:nth-child(1){transition-delay:.02s;} .programs-grid.in .pcard:nth-child(2){transition-delay:.08s;}
+.programs-grid.in .pcard:nth-child(3){transition-delay:.14s;} .programs-grid.in .pcard:nth-child(4){transition-delay:.2s;}
+.programs-grid.in .pcard:nth-child(5){transition-delay:.26s;} .programs-grid.in .pcard:nth-child(6){transition-delay:.32s;}
+.programs-grid.in .pcard:nth-child(7){transition-delay:.38s;} .programs-grid.in .pcard:nth-child(8){transition-delay:.44s;}
+.gallery-grid.in .gitem:nth-child(1){transition-delay:.02s;} .gallery-grid.in .gitem:nth-child(2){transition-delay:.08s;}
+.gallery-grid.in .gitem:nth-child(3){transition-delay:.14s;} .gallery-grid.in .gitem:nth-child(4){transition-delay:.2s;}
+.gallery-grid.in .gitem:nth-child(5){transition-delay:.26s;} .gallery-grid.in .gitem:nth-child(6){transition-delay:.32s;}
+.gallery-grid.in .gitem:nth-child(7){transition-delay:.38s;}
+.stats-grid.in .stat:nth-child(1){transition-delay:.05s;} .stats-grid.in .stat:nth-child(2){transition-delay:.15s;}
+.stats-grid.in .stat:nth-child(3){transition-delay:.25s;} .stats-grid.in .stat:nth-child(4){transition-delay:.35s;}
+.testi-grid.in .tcard:nth-child(1){transition-delay:.05s;} .testi-grid.in .tcard:nth-child(2){transition-delay:.16s;}
+.testi-grid.in .tcard:nth-child(3){transition-delay:.27s;}
+
+/* ============ HERO SHIMMER + FLOAT ============ */
+.hero h1 .line2{
+  background:linear-gradient(100deg,var(--gold-light) 0%,var(--bone) 18%,var(--gold-light) 36%,var(--gold) 54%,var(--gold-light) 72%,var(--bone) 90%,var(--gold-light) 100%);
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shimmer 7s linear infinite;
+}
+@keyframes shimmer{0%{background-position:0% 0;}100%{background-position:-300% 0;}}
+.hero-logo-ghost{animation:ghostFloat 9s ease-in-out infinite;}
+@keyframes ghostFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-18px) rotate(1.2deg);}}
+.hero-bg img{will-change:transform;}
+
+/* ============ BACK TO TOP ============ */
+#toTop{
+  position:fixed;right:26px;bottom:26px;z-index:150;width:52px;height:52px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#1a1200;
+  display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:18px;
+  clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .35s ease,transform .35s ease,visibility .35s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+#toTop.show{opacity:1;visibility:visible;transform:translateY(0);}
+#toTop:hover{transform:translateY(-3px);}
+
+/* header logo pulse */
+.brand img{animation:logoPulse 5s ease-in-out infinite;}
+@keyframes logoPulse{0%,100%{filter:drop-shadow(0 0 10px rgba(201,153,47,.25));}50%{filter:drop-shadow(0 0 18px rgba(201,153,47,.55));}}
+
+/* footer watermark */
+footer{position:relative;overflow:hidden;}
+.foot-watermark{
+  position:absolute;right:-8%;bottom:-18%;width:46%;max-width:520px;opacity:.05;
+  filter:grayscale(1) brightness(1.8);pointer-events:none;z-index:0;
+}
+footer .wrap{position:relative;z-index:1;}
+
+@media (prefers-reduced-motion: reduce){
+  .hero h1 .line2{animation:none;}
+  .hero-logo-ghost{animation:none;}
+  .brand img{animation:none;}
+  .preload-bar span{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<div id="preloader">
+  <img src="beastmode-logo.png" alt="" class="preload-logo">
+  <div class="preload-bar"><span></span></div>
+  <div class="preload-label">Beastmode Coaching</div>
+</div>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="wrap inner">
+    <a href="#home" class="brand">
+      <img src="beastmode-logo.png" alt="Beastmode Coaching lion crest logo">
+      <span class="brand-text"><span class="b1">BEASTMODE</span><span class="b2">COACHING</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#programs">Programs</a>
+      <a href="#coach">Coach Isaac</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#results">Results</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book" class="btn btn-gold magnetic">Book Training</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1607627000458-210e8d2bdb1d?fm=jpg&q=70&w=2200&auto=format&fit=crop" alt="Soccer player under stadium lights at night">
+  </div>
+  <div class="wrap hero-content">
+    <div class="hero-eyebrow">Rochester, NY · Gates High School Park</div>
+    <h1>BUILD YOUR GAME.<span class="line2">BECOME BEASTMODE.</span></h1>
+    <p class="hero-sub">Elite training. Real development. Game-ready confidence — built one rep, one rondo, one rep of film at a time under Coach Isaac Kissi.</p>
+    <div class="hero-ctas">
+      <a href="#book" class="btn btn-gold magnetic">Book Training</a>
+      <a href="#programs" class="btn btn-ghost magnetic">Explore Programs</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span class="stick"></span>SCROLL</div>
+</section>
+
+<div class="ticker-band">
+  <div class="ticker-inner">
+    <div class="ticker-track" id="tickerTrack">
+      <span>GATES HIGH SCHOOL PARK</span><span>1-ON-1 · SMALL GROUP · SHOWCASE PREP</span><span>SPEED · TECHNICAL · MENTAL</span><span>ROCHESTER, NY</span>
+      <span>GATES HIGH SCHOOL PARK</span><span>1-ON-1 · SMALL GROUP · SHOWCASE PREP</span><span>SPEED · TECHNICAL · MENTAL</span><span>ROCHESTER, NY</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="bg-void" id="programs" style="padding-top:150px;">
+  <div class="wrap">
+    <div class="programs-head reveal">
+      <div>
+        <div class="eyebrow">The Arsenal</div>
+        <h2 class="h2">Training <em>Programs</em></h2>
+      </div>
+      <p class="lede">Eight ways to sharpen your game — chosen around where you are today and where you're trying to go.</p>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;max-width:1280px;">
+    <div class="programs-grid reveal">
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1526841931552-d5f57307638e?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Player working one-on-one with intensity"></div>
+        <div class="pnum">01</div>
+        <h3>1-on-1 Training</h3>
+        <p>Fully individualized sessions built around your position, your weaknesses, and your timeline. No wasted reps.</p>
+        <span class="tag">Book a session →</span>
+      </div>
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1695203063563-2f130e346642?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Small group of athletes training together"></div>
+        <div class="pnum">02</div>
+        <h3>Small Group Training</h3>
+        <p>Competitive, focused pods of 3–6 athletes. Enough intensity to push you, enough attention to correct you.</p>
+        <span class="tag">Join a group →</span>
+      </div>
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1729843352938-0e10fbf96585?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Aerial view of soccer field for showcase events"></div>
+        <div class="pnum">03</div>
+        <h3>HS &amp; College Showcases</h3>
+        <p>Get seen and get ready. Showcase prep sharpens the habits recruiters actually notice on film and in person.</p>
+        <span class="tag">Get showcase-ready →</span>
+      </div>
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1607627000458-210e8d2bdb1d?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Player under lights during intense match"></div>
+        <div class="pnum">04</div>
+        <h3>Pro &amp; Semi-Pro Training</h3>
+        <p>Advanced sessions for players competing at the next level — tactical detail, load management, pro habits.</p>
+        <span class="tag">Train pro-level →</span>
+      </div>
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1760115244975-3783bdd30f7a?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Athlete on a training track building speed"></div>
+        <div class="pnum">05</div>
+        <h3>Speed &amp; Agility</h3>
+        <p>Acceleration, change of direction, and first-step explosiveness — the difference between good and gone.</p>
+        <span class="tag">Get faster →</span>
+      </div>
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1783428933739-9880027b22e1?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Players dribbling the ball on a green field"></div>
+        <div class="pnum">06</div>
+        <h3>Technical Development</h3>
+        <p>First touch, ball mastery, finishing, and decision-making under pressure — the foundation of every position.</p>
+        <span class="tag">Sharpen your touch →</span>
+      </div>
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1528040687826-bb1548224f87?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Goalkeeper diving to make a save"></div>
+        <div class="pnum">07</div>
+        <h3>Goalkeeping</h3>
+        <p>Shot-stopping, distribution, footwork, and command of the box — specialized reps for a specialized job.</p>
+        <span class="tag">Train the position →</span>
+      </div>
+      <div class="pcard">
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1617347914136-9274023f8812?fm=jpg&q=70&w=900&auto=format&fit=crop" alt="Silhouette of athlete on field at sunset"></div>
+        <div class="pnum">08</div>
+        <h3>Injury Prevention</h3>
+        <p>Movement quality, mobility, and load-smart programming so your body can handle the game you're chasing.</p>
+        <span class="tag">Train smart →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COACH STORY ============ -->
+<section class="coach" id="coach">
+  <div class="coach-grid">
+    <div class="coach-img reveal">
+      <img src="https://images.unsplash.com/photo-1617347914136-9274023f8812?fm=jpg&q=75&w=1400&auto=format&fit=crop" alt="Silhouette of a coach on the field at golden hour">
+      <div class="coach-badge">"The only thing standing in the way of your goals is you."</div>
+    </div>
+    <div class="coach-copy reveal">
+      <div class="eyebrow">The Man Behind Beastmode</div>
+      <h2 class="h2">Coach <em>Isaac Kissi</em></h2>
+      <p class="quote">"I'm not just building better players. I'm building better athletes — and better people."</p>
+      <p>Isaac Kissi built Beastmode Coaching on a simple idea: talent gets you noticed, but character and work ethic are what get you kept. Every session — whether it's a 1-on-1 finishing drill or a full showcase prep block — is built around the same non-negotiables: relentless effort, coachability, and respect for the process.</p>
+      <p>His approach blends technical repetition with real accountability. Athletes leave Beastmode with a sharper first touch and a stronger mindset — the kind of confidence that shows up on game day, in the classroom, and everywhere else that matters.</p>
+      <div class="coach-name">
+        <div class="line"></div>
+        <div>
+          <h4>Isaac Kissi</h4>
+          <span>Founder &amp; Head Coach, Beastmode Coaching, LLC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="bg-void" id="gallery">
+  <div class="wrap reveal">
+    <div class="eyebrow">In The Field</div>
+    <h2 class="h2">Training <em>Gallery</em></h2>
+    <p class="lede">Real reps, real intensity, real sessions at Gates High School Park and beyond.</p>
+  </div>
+  <div class="wrap" style="margin-top:56px;">
+    <div class="gallery-grid reveal">
+      <div class="gitem g1"><img src="https://images.unsplash.com/photo-1607627000458-210e8d2bdb1d?fm=jpg&q=70&w=1200&auto=format&fit=crop" alt="Night training session under lights"></div>
+      <div class="gitem g2"><img src="https://images.unsplash.com/photo-1783428933739-9880027b22e1?fm=jpg&q=70&w=1000&auto=format&fit=crop" alt="Players dribbling on green turf"></div>
+      <div class="gitem g3"><img src="https://images.unsplash.com/photo-1528040687826-bb1548224f87?fm=jpg&q=70&w=800&auto=format&fit=crop" alt="Goalkeeper making a diving save"></div>
+      <div class="gitem g4"><img src="https://images.unsplash.com/photo-1695203063563-2f130e346642?fm=jpg&q=70&w=800&auto=format&fit=crop" alt="Group of young athletes playing"></div>
+      <div class="gitem g5"><img src="https://images.unsplash.com/photo-1760115244975-3783bdd30f7a?fm=jpg&q=70&w=800&auto=format&fit=crop" alt="Athlete sprinting on a training track"></div>
+      <div class="gitem g6"><img src="https://images.unsplash.com/photo-1526841931552-d5f57307638e?fm=jpg&q=70&w=1000&auto=format&fit=crop" alt="Two athletes battling for the ball"></div>
+      <div class="gitem g7"><img src="https://images.unsplash.com/photo-1729843352938-0e10fbf96585?fm=jpg&q=70&w=1200&auto=format&fit=crop" alt="Aerial view of a soccer field"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="bg-panel" id="results">
+  <div class="section-photo dim"><img src="https://images.unsplash.com/photo-1526841931552-d5f57307638e?fm=jpg&q=70&w=1800&auto=format&fit=crop" alt="Athletes competing for the ball"></div>
+  <div class="wrap reveal">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="h2">Training → Development<br><em>→ Game Day</em></h2>
+    <div class="process-track">
+      <div class="pstep">
+        <div class="pn">1</div>
+        <h3>Training</h3>
+        <p>We start with an honest evaluation — position, level, and goals — then build a plan around the reps that move the needle fastest.</p>
+      </div>
+      <div class="pstep">
+        <div class="pn">2</div>
+        <h3>Development</h3>
+        <p>Consistent sessions build technical skill, physical tools, and the mental toughness to perform under pressure, every time.</p>
+      </div>
+      <div class="pstep">
+        <div class="pn">3</div>
+        <h3>Game Day</h3>
+        <p>Confidence shows up when it counts. Athletes leave Beastmode ready to compete — on the field, in a showcase, or at the next level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-band">
+  <div class="section-photo dim"><img src="https://images.unsplash.com/photo-1529929344488-5e812ddb6e2a?fm=jpg&q=70&w=1800&auto=format&fit=crop" alt="Team huddled together on the field"></div>
+  <div class="wrap">
+    <div class="stats-grid reveal">
+      <div class="stat"><div class="num" data-count="8">0</div><div class="lbl">Training Programs</div></div>
+      <div class="stat"><div class="num" data-count="1">0</div><div class="lbl">Home Base — Gates HS Park</div></div>
+      <div class="stat"><div class="num" data-count="100">0</div><div class="lbl">% Individualized Plans</div></div>
+      <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">Ways To Reach Coach Isaac</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="bg-void" style="position:relative;overflow:hidden;">
+  <div class="section-photo dim"><img src="https://images.unsplash.com/photo-1783428933739-9880027b22e1?fm=jpg&q=70&w=1800&auto=format&fit=crop" alt="Players dribbling on the training field"></div>
+  <div class="wrap reveal">
+    <div class="eyebrow">Athlete &amp; Parent Voices</div>
+    <h2 class="h2">Real <em>Results</em></h2>
+  </div>
+  <div class="wrap">
+    <div class="testi-grid reveal">
+      <div class="tcard">
+        <span class="mark">"</span>
+        <p>My son's touch and confidence completely changed after a few months with Coach Isaac. He plays like he belongs on the ball now, not just around it.</p>
+        <div class="who"><div class="avatar">DM</div><div><h5>Dana M.</h5><span>Parent, U15 Player</span></div></div>
+      </div>
+      <div class="tcard">
+        <span class="mark">"</span>
+        <p>The showcase prep was the difference-maker. I walked in knowing exactly what coaches wanted to see, and I showed it from the first whistle.</p>
+        <div class="who"><div class="avatar">JT</div><div><h5>Jordan T.</h5><span>High School Senior</span></div></div>
+      </div>
+      <div class="tcard">
+        <span class="mark">"</span>
+        <p>It's not just soccer training — it's mentorship. My daughter comes home more disciplined about school and her whole attitude, not just her game.</p>
+        <div class="who"><div class="avatar">RK</div><div><h5>Renee K.</h5><span>Parent, U13 Player</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="bg-panel" id="faq" style="position:relative;overflow:hidden;">
+  <div class="section-photo edge"><img src="https://images.unsplash.com/photo-1760115244975-3783bdd30f7a?fm=jpg&q=70&w=1800&auto=format&fit=crop" alt="Athlete training on the track"></div>
+  <div class="wrap reveal">
+    <div class="eyebrow">Questions</div>
+    <h2 class="h2">Frequently <em>Asked</em></h2>
+    <div class="faq-wrap">
+      <div class="faq-item"><button class="faq-q"><span>What ages and skill levels do you train?</span><span class="plus">+</span></button><div class="faq-a"><p>Beastmode Coaching works with youth, high school, and college-level athletes, along with pro and semi-pro players. Every plan is built around the athlete's current level, not a fixed curriculum.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Where do training sessions take place?</span><span class="plus">+</span></button><div class="faq-a"><p>Training is based at Gates High School Park in Rochester, NY. Session details and any location adjustments are confirmed directly when you book.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Should I choose 1-on-1 or small group training?</span><span class="plus">+</span></button><div class="faq-a"><p>1-on-1 sessions are fully customized to one athlete's needs. Small group training adds competitive pressure and teamwork at a lower per-session cost — many athletes do both.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>What should I bring to a session?</span><span class="plus">+</span></button><div class="faq-a"><p>Cleats or turf shoes, shin guards, a ball if you have one, and water. Specifics for any specialized session (like goalkeeping) will be shared when you book.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>How do I book a session or ask a question?</span><span class="plus">+</span></button><div class="faq-a"><p>Use the booking form below, call 570-991-5541 or 585-764-7798, or email kissiatbeastmodecoaching@gmail.com. Coach Isaac will follow up to confirm a plan.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="bg-void" id="book" style="position:relative;overflow:hidden;">
+  <div class="section-photo dim"><img src="https://images.unsplash.com/photo-1607627000458-210e8d2bdb1d?fm=jpg&q=70&w=1800&auto=format&fit=crop" alt="Player under stadium lights at night"></div>
+  <div class="wrap reveal">
+    <div class="eyebrow">Get Started</div>
+    <h2 class="h2">Book Your <em>Training</em></h2>
+    <p class="lede">Tell us where you're at and where you want to go — Coach Isaac will follow up to build your plan.</p>
+  </div>
+  <div class="wrap" style="margin-top:56px;">
+    <div class="book-wrap reveal">
+      <form class="book-form" onsubmit="event.preventDefault(); this.querySelector('.submit-note').style.display='block';">
+        <div class="field-row">
+          <div class="field"><label>Full Name</label><input type="text" required placeholder="Your name"></div>
+          <div class="field"><label>Age / Grad Year</label><input type="text" placeholder="e.g. 15 / 2028"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Email</label><input type="email" required placeholder="you@email.com"></div>
+          <div class="field"><label>Phone</label><input type="tel" placeholder="(585) 000-0000"></div>
+        </div>
+        <div class="field">
+          <label>Program Interest</label>
+          <select>
+            <option>1-on-1 Training</option>
+            <option>Small Group Training</option>
+            <option>HS &amp; College Showcases</option>
+            <option>Pro &amp; Semi-Pro Training</option>
+            <option>Speed &amp; Agility</option>
+            <option>Technical Development</option>
+            <option>Goalkeeping</option>
+            <option>Injury Prevention</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tell Us About Your Goals</label>
+          <textarea rows="4" placeholder="Position, current level, and what you're working toward..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold magnetic" style="margin-top:10px;">Request Training</button>
+        <p class="submit-note" style="display:none;margin-top:16px;color:var(--gold-light);font-size:14px;">Thanks — Coach Isaac will follow up soon. For faster response, call or email directly →</p>
+      </form>
+      <div class="book-info">
+        <div class="section-photo"><img src="https://images.unsplash.com/photo-1695203063563-2f130e346642?fm=jpg&q=70&w=1000&auto=format&fit=crop" alt="Small group training session"></div>
+        <div class="info-row">
+          <div class="ic">📍</div>
+          <div><h5>Training Location</h5><p>Gates High School Park<br>Rochester, NY</p></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">📞</div>
+          <div><h5>Call</h5><a href="tel:5709915541">570-991-5541</a><a href="tel:5857647798">585-764-7798</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">✉️</div>
+          <div><h5>Email</h5><a href="mailto:kissiatbeastmodecoaching@gmail.com">kissiatbeastmodecoaching@gmail.com</a><a href="mailto:isaac.kissi@gmail.com">isaac.kissi@gmail.com</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic">🦁</div>
+          <div><h5>Owner</h5><p>Isaac Kissi, Beastmode Coaching, LLC</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="section-photo dim"><img src="https://images.unsplash.com/photo-1617347914136-9274023f8812?fm=jpg&q=70&w=1800&auto=format&fit=crop" alt="Silhouette of athlete on the field at sunset"></div>
+  <div class="bgline"></div>
+  <div class="wrap reveal">
+    <h2>YOUR POTENTIAL<br>DOESN'T <span>TRAIN ITSELF.</span></h2>
+    <p>Beastmode Coaching, LLC — Gates High School Park, Rochester, NY.</p>
+    <a href="#book" class="btn btn-gold magnetic">Book Your Training Now</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <img class="foot-watermark" src="beastmode-logo.png" alt="">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#home" class="brand">
+          <img src="beastmode-logo.png" alt="Beastmode Coaching logo" style="height:56px;width:56px;object-fit:contain;">
+          <span class="brand-text"><span class="b1">BEASTMODE</span><span class="b2">COACHING</span></span>
+        </a>
+        <p>Elite soccer training and athlete development in Rochester, NY. Building better athletes — and better people — with Coach Isaac Kissi.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Programs</h5>
+          <a href="#programs">1-on-1 Training</a>
+          <a href="#programs">Small Group Training</a>
+          <a href="#programs">Showcases</a>
+          <a href="#programs">Speed &amp; Agility</a>
+        </div>
+        <div class="foot-col">
+          <h5>Site</h5>
+          <a href="#coach">Coach Isaac</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#faq">FAQ</a>
+          <a href="#book">Book Training</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <p>Gates High School Park<br>Rochester, NY</p>
+          <a href="tel:5709915541">570-991-5541</a>
+          <a href="mailto:kissiatbeastmodecoaching@gmail.com">kissiatbeastmodecoaching@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year"></span> Beastmode Coaching, LLC. All rights reserved.</p>
+      <p>Owner: Isaac Kissi</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// preloader
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader');
+  setTimeout(() => { pre.classList.add('done'); }, 500);
+  setTimeout(() => { pre.style.display = 'none'; }, 1300);
+});
+
+// header scroll state + back to top visibility
+const header = document.getElementById('siteHeader');
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  header.classList.toggle('scrolled', y > 40);
+  toTop.classList.toggle('show', y > 700);
+}, {passive:true});
+toTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+// hero parallax
+const heroImg = document.querySelector('.hero-bg img');
+if(heroImg){
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if(y < window.innerHeight){
+      heroImg.style.transform = `translateY(${y * 0.18}px) scale(1.06)`;
+    }
+  }, {passive:true});
+}
+
+// mobile nav
+const burger = document.getElementById('burger');
+const nav = document.getElementById('mainNav');
+burger.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  burger.classList.toggle('open');
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+// scroll reveal (also flags grids with .in for staggered children)
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.15});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// faq accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
+    if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+// animated counters
+const counters = document.querySelectorAll('.num');
+const cIo = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      const el = e.target;
+      const target = parseInt(el.dataset.count, 10);
+      let cur = 0;
+      const step = Math.max(1, Math.ceil(target / 40));
+      const t = setInterval(() => {
+        cur += step;
+        if(cur >= target){ cur = target; clearInterval(t); }
+        el.textContent = cur + (target >= 8 && target !== 100 ? '+' : (target===100?'%':''));
+      }, 30);
+      cIo.unobserve(el);
+    }
+  });
+}, {threshold:.5});
+counters.forEach(c => cIo.observe(c));
+
+// magnetic buttons
+document.querySelectorAll('.magnetic').forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width/2;
+    const y = e.clientY - r.top - r.height/2;
+    btn.style.transform = `translate(${x*0.18}px, ${y*0.35}px)`;
+  });
+  btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+});
+</script>
+</body>
+</html>
